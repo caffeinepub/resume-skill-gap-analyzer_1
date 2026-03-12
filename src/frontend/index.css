@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+    --background: 0.11 0.02 240;
+    --foreground: 0.97 0 0;
+    --card: 0.16 0.03 240;
+    --card-foreground: 0.97 0 0;
+    --popover: 0.16 0.03 240;
+    --popover-foreground: 0.97 0 0;
+    --primary: 0.58 0.22 245;
+    --primary-foreground: 0.97 0 0;
+    --secondary: 0.22 0.04 240;
+    --secondary-foreground: 0.97 0 0;
+    --muted: 0.22 0.04 240;
+    --muted-foreground: 0.56 0.04 245;
+    --accent: 0.22 0.04 240;
+    --accent-foreground: 0.97 0 0;
+    --destructive: 0.59 0.19 22;
+    --destructive-foreground: 0.97 0 0;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.58 0.22 245;
+    --chart-1: 0.58 0.22 245;
+    --chart-2: 0.73 0.17 168;
+    --chart-3: 0.82 0.18 75;
+    --chart-4: 0.72 0.19 22;
+    --chart-5: 0.63 0.26 304;
+    --sidebar: 0.16 0.03 240;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.58 0.22 245;
+    --sidebar-primary-foreground: 0.97 0 0;
+    --sidebar-accent: 0.22 0.04 240;
+    --sidebar-accent-foreground: 0.97 0 0;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.58 0.22 245;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .card-glass {
+    background: oklch(0.16 0.03 240 / 0.7);
+    border: 1px solid oklch(1 0 0 / 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px oklch(0.58 0.22 245 / 0.15);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, oklch(0.58 0.22 245), oklch(0.73 0.17 168));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .font-display {
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
